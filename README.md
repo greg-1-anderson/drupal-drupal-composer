@@ -30,13 +30,13 @@ In addition to creating the minimum-viable installable Drupal site, drupal-compo
 Items checked below are also supported in this project.
 
 - [x] Create modules, profiles and themes directories.
-- [x] Include and configure cweagans/composer-patches
-- [x] Include Drush and Drupal Console
-- [ ] Create an initial settings.php file.
+- [ ] _Create an initial settings.php file._
+- [ ] _Include and configure cweagans/composer-patches._
+- [ ] _Include Drush and Drupal Console._
 - [ ] Create an initial files directory.
-- [ ] Custom environment variable definition via .env files using vlucas/phpdotenv
-- [ ] Include example Drush configuration files
-- [ ] Create a random config sync directory name prior to installing.
-- [ ] Ensure that Composer is at version 1.0.0 or later.
+- [ ] Custom environment variable definition via .env files using vlucas/phpdotenv.
+- [ ] Include example Drush configuration files.
+- [ ] ~Create a random config sync directory name prior to installing.~
+- [ ] ~Ensure that Composer is at version 1.0.0 or later.~
 
-It would be possible to support more of these features in this project, and perhaps at some point more will be added. For the initial experiment, though, the primary goal was to produce an installable Drupal site using a minimum of files.
+The unchecked items are potential TODOs for this project, or a derivative project. The items in italic were provided at one time, but backed out to make the results of this project more in line with a drupal/drupal tarball. The items that have been struck out, though, are probably not necessary to maintain.

@@ -21,12 +21,7 @@
         "drupal/drupal-scaffold": "8.8.x-dev",
         "drupal/core": "^8.7.0",
         "greg-1-anderson/drupal-scaffold-assets": "^8.7.0",
-        "cweagans/composer-patches": "^1.6.5",
-        "drush/drush": "^9.0.0",
-        "drupal/console": "^1.0.2",
-        "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
-        "zaporylie/composer-drupal-optimizations": "^1.0"
+        "webflo/drupal-core-strict": "^8.7.0"
     },
     "require-dev": {
         "webflo/drupal-core-require-dev": "^8.7.0"
@@ -46,6 +41,9 @@
             ],
             "locations": {
                 "web-root": "./"
+            },
+            "file-mapping": {
+                "[web-root]/sites/default/settings.php": false
             }
         },
         "composer-exit-on-patch-failure": true,
