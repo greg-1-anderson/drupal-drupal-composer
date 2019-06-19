@@ -42,7 +42,4 @@ This project is using the [experimental 8.8.x branch of drupal/drupal-scaffold](
 - [ ] ~Create a random config sync directory name prior to installing.~
 - [ ] ~Ensure that Composer is at version 1.0.0 or later.~
 
-- **Checked** items are features of drupal-composer/drupal-project also implemented here.
-- _Italic_ items were implemented here in a previous revision, but have been backed out to make the results of this project more in line with a drupal/drupal tarball.
-- Plain text items could be added to this project, or a derivative project.
-- ~Strikethough~ items are probably not necessary.
+In the list above, **checked** items are features of drupal-composer/drupal-project also implemented here. _Italic_ items were implemented here in a previous revision, but have been backed out to make the results of this project more in line with a drupal/drupal tarball. Plain text items could be added to this project, or a derivative project. ~Strikethough~ items are probably not necessary.
