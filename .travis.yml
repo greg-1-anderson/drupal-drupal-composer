@@ -12,6 +12,7 @@ before_script:
   - |
     echo "{ \"package\": { \"name\": \"greg-1-anderson/drupal-drupal-composer\", \"version\": \"1.0.0\", \"source\": { \"url\": \"$(pwd)/.git\", \"type\": \"git\", \"reference\": \"master\" } } }" > /tmp/packages.json
   - composer create-project --repository-url=/tmp/packages.json --no-dev greg-1-anderson/drupal-drupal-composer /tmp/drupal-drupal-composer
+  - composer --working-dir=/tmp/drupal-drupal-composer composer:scaffold
 
   # Look up the version of drupal/core in our SUT, and use it to download a tarball
   - |
@@ -20,12 +21,12 @@ before_script:
     curl -o /tmp/drupal.tgz https://ftp.drupal.org/files/projects/drupal-$DRUPAL_CORE_VERSION.tar.gz
     ls /tmp
     cd /tmp
-    tar -xzvf drupal.tgz
+    tar -xzvf drupal.tgz >/dev/null
     mv drupal-$DRUPAL_CORE_VERSION drupal-untarred
 
   # Repair the tarball:
   #  - Remove info from drupal.org packaging from info.yml files
-  - find /tmp/drupal-untarred -name "*.info.yml" -exec sed -e 's/^# version:/version:/' -e 's/^# core:/core:/' -e '/# Information added by Drupal.org packaging script/,$d' -i '' {} \;
+  - find /tmp/drupal-untarred -name "*.info.yml" -exec sed -e 's/^# version:/version:/' -e 's/^# core:/core:/' -e '/# Information added by Drupal.org packaging script/,$d' -i {} \;
 
   # Repair the SUT:
   #  - Remove the README.md
