@@ -1,0 +1,62 @@
+language: php
+php:
+  - 5.5
+
+before_script:
+  # Set up Composer.
+  - composer selfupdate --no-interaction
+  - composer config -l
+  - composer clear-cache
+
+  # Use 'composer create-project' to create our SUT
+  - echo "{ \"package\": { \"name\": \"greg-1-anderson/drupal-drupal-composer\", \"version\": \"1.0.0\", \"source\": { \"url\": \"$(pwd)/.git\", \"type\": \"git\", \"reference\": \"master\" } } }" > /tmp/packages.json
+  - composer create-project --repository-url=/tmp/packages.json --no-dev greg-1-anderson/drupal-drupal-composer /tmp/drupal-drupal-composer
+
+  # Look up the version of drupal/core in our SUT, and use it to download a tarball
+  - |
+    DRUPAL_CORE_VERSION=$(composer --working-dir=/tmp/drupal-drupal-composer show drupal/core | grep 'versions' | grep -o -E '\*\ .+' | cut -d' ' -f2 | cut -d',' -f1;)
+    curl -o /tmp/drupal.tgz https://ftp.drupal.org/files/projects/drupal-$DRUPAL_CORE_VERSION.tar.gz
+    tar -C /tmp xzvf drupal.tgz
+    mv /tmp/drupal-$DRUPAL_CORE_VERSION /tmp/drupal-untarred
+
+  # Repair the tarball:
+  #  - Remove info from drupal.org packaging from info.yml files
+  - find /tmp/drupal-untarred -name "*.info.yml" -exec sed -e 's/^# version:/version:/' -e 's/^# core:/core:/' -e '/# Information added by Drupal.org packaging script/,$d' -i '' {} \;
+
+  # Repair the SUT:
+  #  - Remove the README.md
+  - rm /tmp/drupal-drupal-composer/README.md
+
+script:
+  # Check for differences between the tarball and the SUT (except vendor)
+  - |
+    diff -rBq \
+    -x vendor \
+    -x auotload.php \
+    -x test \
+    -x Test \
+    -x tests \
+    -x Tests \
+    -x .git \
+    -x .travis.yml \
+    -x .gitignore \
+    -x LICENSE.txt \
+    -x composer.json \
+    -x composer.lock \
+    /tmp/drupal-untarred /tmp/drupal-drupal-composer
+  # Check for differences between the vendor directory in the tarball and the SUT
+  - |
+    diff -rBq \
+    -x .htaccess \
+    -x test \
+    -x Test \
+    -x tests \
+    -x Tests \
+    -x web.config \
+    -x composer \
+    -x doc \
+    -x ext \
+    -x Resources \
+    -x drupal \
+    -x greg-1-anderson \
+    /tmp/drupal-untarred/vendor /tmp/drupal-drupal-composer/vendor
