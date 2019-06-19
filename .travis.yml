@@ -9,7 +9,8 @@ before_script:
   - composer clear-cache
 
   # Use 'composer create-project' to create our SUT
-  - echo "{ \"package\": { \"name\": \"greg-1-anderson/drupal-drupal-composer\", \"version\": \"1.0.0\", \"source\": { \"url\": \"$(pwd)/.git\", \"type\": \"git\", \"reference\": \"master\" } } }" > /tmp/packages.json
+  - |
+    echo "{ \"package\": { \"name\": \"greg-1-anderson/drupal-drupal-composer\", \"version\": \"1.0.0\", \"source\": { \"url\": \"$(pwd)/.git\", \"type\": \"git\", \"reference\": \"master\" } } }" > /tmp/packages.json
   - composer create-project --repository-url=/tmp/packages.json --no-dev greg-1-anderson/drupal-drupal-composer /tmp/drupal-drupal-composer
 
   # Look up the version of drupal/core in our SUT, and use it to download a tarball
