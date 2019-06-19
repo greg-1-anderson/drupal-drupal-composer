@@ -17,7 +17,7 @@ before_script:
   - |
     DRUPAL_CORE_VERSION=$(composer --working-dir=/tmp/drupal-drupal-composer show drupal/core | grep 'versions' | grep -o -E '\*\ .+' | cut -d' ' -f2 | cut -d',' -f1;)
     curl -o /tmp/drupal.tgz https://ftp.drupal.org/files/projects/drupal-$DRUPAL_CORE_VERSION.tar.gz
-    tar -C /tmp xzvf drupal.tgz
+    tar -C /tmp -xzvf drupal.tgz
     mv /tmp/drupal-$DRUPAL_CORE_VERSION /tmp/drupal-untarred
 
   # Repair the tarball:
