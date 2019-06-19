@@ -37,7 +37,7 @@ script:
   - |
     diff -rBq \
     -x vendor \
-    -x auotload.php \
+    -x autoload.php \
     -x test \
     -x Test \
     -x tests \
@@ -53,6 +53,7 @@ script:
   - |
     diff -rBq \
     -x .htaccess \
+    -x autoload.php \
     -x test \
     -x Test \
     -x tests \
@@ -65,3 +66,4 @@ script:
     -x drupal \
     -x greg-1-anderson \
     /tmp/drupal-untarred/vendor /tmp/drupal-drupal-composer/vendor
+
