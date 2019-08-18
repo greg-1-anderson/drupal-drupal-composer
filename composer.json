@@ -13,18 +13,17 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/greg-1-anderson/core.git"
         }
     ],
     "require": {
         "php": ">=5.6",
         "composer/installers": "^1.2",
         "drupal/drupal-scaffold": "8.8.x-dev",
-        "drupal/core": "^8.7.0",
-        "greg-1-anderson/drupal-scaffold-assets": "^8.7.0",
-        "webflo/drupal-core-strict": "^8.7.0"
-    },
-    "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.7.0"
+        "drupal/core": "8.8.x-dev"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -37,13 +36,10 @@
     "extra": {
         "composer-scaffold": {
             "allowed-packages": [
-                "greg-1-anderson/drupal-scaffold-assets"
+                "drupal/core"
             ],
             "locations": {
                 "web-root": "./"
-            },
-            "file-mapping": {
-                "[web-root]/sites/default/settings.php": false
             }
         },
         "composer-exit-on-patch-failure": true,
