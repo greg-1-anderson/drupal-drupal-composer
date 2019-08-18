@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c41f8b7ac701d3e31fb990f09b59032c",
+    "content-hash": "8d31a0ca2a4cf05ed61d24f1fdfffe37",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1332,6 +1332,45 @@
                 "validator"
             ],
             "time": "2019-08-13T17:33:27+00:00"
+        },
+        {
+            "name": "greg.1.anderson/core-vendor-hardening",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/greg-1-anderson/core-vendor-hardening.git",
+                "reference": "cba59605b0fb58d0d93568c9cdd79c32bf1071ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/greg-1-anderson/core-vendor-hardening/zipball/cba59605b0fb58d0d93568c9cdd79c32bf1071ea",
+                "reference": "cba59605b0fb58d0d93568c9cdd79c32bf1071ea",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1",
+                "drupal/core-php-storage": "8.8.x-dev",
+                "php": ">=7.0.8"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Drupal\\Composer\\Plugin\\VendorHardening\\VendorHardeningPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\Composer\\Plugin\\VendorHardening\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Hardens the vendor directory for when it's in the docroot.",
+            "homepage": "https://www.drupal.org/project/drupal",
+            "keywords": [
+                "drupal"
+            ],
+            "time": "2019-08-07T15:29:45+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3651,6 +3690,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/drupal-scaffold": 20,
+        "greg.1.anderson/core-vendor-hardening": 20,
         "drupal/core": 20
     },
     "prefer-stable": true,

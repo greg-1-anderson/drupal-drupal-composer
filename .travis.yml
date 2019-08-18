@@ -29,8 +29,9 @@ before_script:
   - find /tmp/drupal-untarred -name "*.info.yml" -exec sed -e 's/^# version:/version:/' -e 's/^# core:/core:/' -e '/# Information added by Drupal.org packaging script/,$d' -i {} \;
 
   # Repair the SUT:
-  #  - Remove the README.md
+  #  - Remove the README.md and the scaffold files
   - rm /tmp/drupal-drupal-composer/README.md
+  - rm -rf /tmp/drupal-drupal-composer/core/assets/scaffold
 
 script:
   # Check for differences between the tarball and the SUT (except vendor)
