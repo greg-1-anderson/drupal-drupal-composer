@@ -6,7 +6,9 @@ THIS IS A DEMONSTRATION AND WILL NOT BE MAINTAINED. DO NOT USE.
 
 This is a project template for Drupal 8 projects with composer following the drupal/drupal layout. The goal of this project is to try out various things prior to making a patch with similar behavior for Drupal Core.
 
-This project is based on drupal-composer/drupal-project, except it does not have a relocated document root. The Drupal root is installed at the project root, just like the drupal/drupal project. The intention is that this layout will be used by the Drupal.org infrastructure to create the Drupal tarballs for download. The benefit of doing it this way is that users will be able to take ownership of the `composer.json` file at the project root. Immediately after untaring Drupal, `composer require` may be used to add modules and themes to Drupal, and `composer update` may be used in the future to update Drupal Core, and the site's contrib modules.
+This project is similar to drupal-composer/drupal-project, except it does not have a relocated document root. The Drupal root is installed at the project root, just like the drupal/drupal project. The intention is that this layout will be used by the Drupal.org infrastructure to create the Drupal tarballs for download. The benefit of doing it this way is that users will be able to take ownership of the `composer.json` file at the project root. Immediately after untaring Drupal, `composer require` may be used to add modules and themes to Drupal, and `composer update` may be used in the future to update Drupal Core, and the site's contrib modules.
+
+This project is based on [drupal-project-legacy](https://github.com/drupal/drupal-project-legacy), and should be re-joined with that project once the Scaffold plugin patch is merged.
 
 ## Usage
 
