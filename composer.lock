@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d31a0ca2a4cf05ed61d24f1fdfffe37",
+    "content-hash": "3a5af7859bfce62efb133e5c2ccd926c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1170,17 +1170,17 @@
             "time": "2019-08-18T01:30:23+00:00"
         },
         {
-            "name": "drupal/drupal-scaffold",
+            "name": "drupal/core-composer-scaffold",
             "version": "8.8.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/drupal/drupal-scaffold.git",
-                "reference": "b90f8fc845ccd05aab95ffcde78dff03cd747ca4"
+                "url": "https://github.com/drupal/core-composer-scaffold.git",
+                "reference": "d07805cdbd85efd89d539df48711ae4d6de84a3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/drupal-scaffold/zipball/b90f8fc845ccd05aab95ffcde78dff03cd747ca4",
-                "reference": "b90f8fc845ccd05aab95ffcde78dff03cd747ca4",
+                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/d07805cdbd85efd89d539df48711ae4d6de84a3f",
+                "reference": "d07805cdbd85efd89d539df48711ae4d6de84a3f",
                 "shasum": ""
             },
             "require": {
@@ -1211,7 +1211,41 @@
             "keywords": [
                 "drupal"
             ],
-            "time": "2019-07-09T15:12:39+00:00"
+            "time": "2019-07-10T21:47:33+00:00"
+        },
+        {
+            "name": "drupal/core-file-security",
+            "version": "8.8.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal/core-file-security.git",
+                "reference": "3d3fcb69e671eb491f4853b8ff203942c95a7e11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal/core-file-security/zipball/3d3fcb69e671eb491f4853b8ff203942c95a7e11",
+                "reference": "3d3fcb69e671eb491f4853b8ff203942c95a7e11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\Component\\FileSecurity\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "FileSecurity.",
+            "homepage": "https://www.drupal.org/project/drupal",
+            "keywords": [
+                "drupal"
+            ],
+            "time": "2019-08-22T02:49:54+00:00"
         },
         {
             "name": "easyrdf/easyrdf",
@@ -1339,17 +1373,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/greg-1-anderson/core-vendor-hardening.git",
-                "reference": "cba59605b0fb58d0d93568c9cdd79c32bf1071ea"
+                "reference": "f8b17cd5da25cce1271c6c7d39010920855186be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-1-anderson/core-vendor-hardening/zipball/cba59605b0fb58d0d93568c9cdd79c32bf1071ea",
-                "reference": "cba59605b0fb58d0d93568c9cdd79c32bf1071ea",
+                "url": "https://api.github.com/repos/greg-1-anderson/core-vendor-hardening/zipball/f8b17cd5da25cce1271c6c7d39010920855186be",
+                "reference": "f8b17cd5da25cce1271c6c7d39010920855186be",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1",
-                "drupal/core-php-storage": "8.8.x-dev",
+                "drupal/core-file-security": "^8.8",
                 "php": ">=7.0.8"
             },
             "type": "composer-plugin",
@@ -1370,7 +1404,7 @@
             "keywords": [
                 "drupal"
             ],
-            "time": "2019-08-07T15:29:45+00:00"
+            "time": "2019-08-23T23:44:49+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3689,7 +3723,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/drupal-scaffold": 20,
+        "drupal/core-composer-scaffold": 20,
         "greg.1.anderson/core-vendor-hardening": 20,
         "drupal/core": 20
     },
