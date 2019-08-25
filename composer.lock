@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "396c2d579f3748eb8751a5831fc807b8",
+    "content-hash": "48a7100313e712d138483bcc66562503",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -679,13 +679,13 @@
             "version": "8.8.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/greg-1-anderson/core.git",
-                "reference": "0a75dd0ef46f4ebd963fed07dad5eb676378d7ed"
+                "url": "https://github.com/drupal/core.git",
+                "reference": "a0093891fec7368cc6ec8276d44e28cac103465b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-1-anderson/core/zipball/0a75dd0ef46f4ebd963fed07dad5eb676378d7ed",
-                "reference": "0a75dd0ef46f4ebd963fed07dad5eb676378d7ed",
+                "url": "https://api.github.com/repos/drupal/core/zipball/a0093891fec7368cc6ec8276d44e28cac103465b",
+                "reference": "a0093891fec7368cc6ec8276d44e28cac103465b",
                 "shasum": ""
             },
             "require": {
@@ -770,6 +770,7 @@
                 "drupal/core-discovery": "self.version",
                 "drupal/core-event-dispatcher": "self.version",
                 "drupal/core-file-cache": "self.version",
+                "drupal/core-file-security": "self.version",
                 "drupal/core-filesystem": "self.version",
                 "drupal/core-gettext": "self.version",
                 "drupal/core-graph": "self.version",
@@ -849,35 +850,6 @@
                 "drupal/workspaces": "self.version"
             },
             "type": "drupal-core",
-            "extra": {
-                "composer-scaffold": {
-                    "file-mapping": {
-                        "[web-root]/.csslintrc": "assets/scaffold/files/csslintrc",
-                        "[web-root]/.editorconfig": "assets/scaffold/files/editorconfig",
-                        "[web-root]/.eslintignore": "assets/scaffold/files/eslintignore",
-                        "[web-root]/.eslintrc.json": "assets/scaffold/files/eslintrc.json",
-                        "[web-root]/.gitattributes": "assets/scaffold/files/gitattributes",
-                        "[web-root]/.ht.router.php": "assets/scaffold/files/ht.router.php",
-                        "[web-root]/.htaccess": "assets/scaffold/files/htaccess",
-                        "[web-root]/example.gitignore": "assets/scaffold/files/example.gitignore",
-                        "[web-root]/index.php": "assets/scaffold/files/index.php",
-                        "[web-root]/INSTALL.txt": "assets/scaffold/files/drupal.INSTALL.txt",
-                        "[web-root]/README.txt": "assets/scaffold/files/drupal.README.txt",
-                        "[web-root]/robots.txt": "assets/scaffold/files/robots.txt",
-                        "[web-root]/update.php": "assets/scaffold/files/update.php",
-                        "[web-root]/web.config": "assets/scaffold/files/web.config",
-                        "[web-root]/sites/README.txt": "assets/scaffold/files/sites.README.txt",
-                        "[web-root]/sites/development.services.yml": "assets/scaffold/files/development.services.yml",
-                        "[web-root]/sites/example.settings.local.php": "assets/scaffold/files/example.settings.local.php",
-                        "[web-root]/sites/example.sites.php": "assets/scaffold/files/example.sites.php",
-                        "[web-root]/sites/default/default.services.yml": "assets/scaffold/files/default.services.yml",
-                        "[web-root]/sites/default/default.settings.php": "assets/scaffold/files/default.settings.php",
-                        "[web-root]/modules/README.txt": "assets/scaffold/files/modules.README.txt",
-                        "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
-                        "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
-                    }
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Drupal\\Core\\": "lib/Drupal/Core",
@@ -894,22 +866,12 @@
                     "lib/Drupal/Core/Site/Settings.php"
                 ]
             },
-            "scripts": {
-                "pre-autoload-dump": [
-                    "Drupal\\Core\\Composer\\Composer::preAutoloadDump"
-                ],
-                "post-autoload-dump": [
-                    "Drupal\\Core\\Composer\\Composer::ensureHtaccess"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "support": {
-                "source": "https://github.com/greg-1-anderson/core/tree/8.8.x"
-            },
-            "time": "2019-08-18T01:30:23+00:00"
+            "time": "2019-08-23T18:30:10+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -954,40 +916,6 @@
                 "drupal"
             ],
             "time": "2019-07-10T21:47:33+00:00"
-        },
-        {
-            "name": "drupal/core-file-security",
-            "version": "8.8.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal/core-file-security.git",
-                "reference": "3d3fcb69e671eb491f4853b8ff203942c95a7e11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-file-security/zipball/3d3fcb69e671eb491f4853b8ff203942c95a7e11",
-                "reference": "3d3fcb69e671eb491f4853b8ff203942c95a7e11",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Drupal\\Component\\FileSecurity\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "FileSecurity.",
-            "homepage": "https://www.drupal.org/project/drupal",
-            "keywords": [
-                "drupal"
-            ],
-            "time": "2019-08-22T02:49:54+00:00"
         },
         {
             "name": "easyrdf/easyrdf",
@@ -1185,43 +1113,59 @@
             "time": "2019-08-24T22:26:25+00:00"
         },
         {
-            "name": "greg.1.anderson/core-vendor-hardening",
-            "version": "dev-master",
+            "name": "greg-1-anderson/drupal-scaffold-assets",
+            "version": "8.8.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/greg-1-anderson/core-vendor-hardening.git",
-                "reference": "f8b17cd5da25cce1271c6c7d39010920855186be"
+                "url": "https://github.com/greg-1-anderson/drupal-scaffold-assets.git",
+                "reference": "de98490247dc29986eefedbcf1974eb5c9caaab2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-1-anderson/core-vendor-hardening/zipball/f8b17cd5da25cce1271c6c7d39010920855186be",
-                "reference": "f8b17cd5da25cce1271c6c7d39010920855186be",
+                "url": "https://api.github.com/repos/greg-1-anderson/drupal-scaffold-assets/zipball/de98490247dc29986eefedbcf1974eb5c9caaab2",
+                "reference": "de98490247dc29986eefedbcf1974eb5c9caaab2",
                 "shasum": ""
             },
-            "require": {
-                "composer-plugin-api": "^1.1",
-                "drupal/core-file-security": "^8.8",
-                "php": ">=7.0.8"
-            },
-            "type": "composer-plugin",
+            "type": "library",
             "extra": {
-                "class": "Drupal\\Composer\\Plugin\\VendorHardening\\VendorHardeningPlugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Drupal\\Composer\\Plugin\\VendorHardening\\": "."
+                "composer-scaffold": {
+                    "file-mapping": {
+                        "[web-root]/.csslintrc": "assets/csslintrc",
+                        "[web-root]/.editorconfig": "assets/editorconfig",
+                        "[web-root]/.eslintignore": "assets/eslintignore",
+                        "[web-root]/.eslintrc.json": "assets/eslintrc.json",
+                        "[web-root]/.gitattributes": "assets/gitattributes",
+                        "[web-root]/.ht.router.php": "assets/ht.router.php",
+                        "[web-root]/.htaccess": "assets/htaccess",
+                        "[web-root]/example.gitignore": "assets/example.gitignore",
+                        "[web-root]/index.php": "assets/index.php",
+                        "[web-root]/robots.txt": "assets/robots.txt",
+                        "[web-root]/update.php": "assets/update.php",
+                        "[web-root]/web.config": "assets/web.config",
+                        "[web-root]/sites/default/default.services.yml": "assets/default.services.yml",
+                        "[web-root]/sites/default/default.settings.php": "assets/default.settings.php",
+                        "[web-root]/sites/example.settings.local.php": "assets/example.settings.local.php",
+                        "[web-root]/sites/development.services.yml": "assets/development.services.yml",
+                        "[web-root]/sites/default/settings.php": {
+                            "path": "assets/default.settings.php",
+                            "overwrite": false
+                        },
+                        "[web-root]/sites/example.sites.php": "assets/example.sites.php",
+                        "[web-root]/modules/README.txt": "assets/modules.README.txt",
+                        "[web-root]/profiles/README.txt": "assets/profiles.README.txt",
+                        "[web-root]/sites/README.txt": "assets/sites.README.txt",
+                        "[web-root]/themes/README.txt": "assets/themes.README.txt",
+                        "[web-root]/INSTALL.txt": "assets/INSTALL.txt",
+                        "[web-root]/README.txt": "assets/README.txt"
+                    }
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
-            "description": "Hardens the vendor directory for when it's in the docroot.",
-            "homepage": "https://www.drupal.org/project/drupal",
-            "keywords": [
-                "drupal"
-            ],
-            "time": "2019-08-23T23:44:49+00:00"
+            "description": "Scaffold assets from drupal/drupal",
+            "time": "2019-06-19T00:32:55+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -6358,7 +6302,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/core-composer-scaffold": 20,
-        "greg.1.anderson/core-vendor-hardening": 20,
+        "greg-1-anderson/drupal-scaffold-assets": 20,
         "greg-1-anderson/core-recommended-dependencies": 20,
         "greg-1-anderson/core-dev-dependencies": 20
     },
