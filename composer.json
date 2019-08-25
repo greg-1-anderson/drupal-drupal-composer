@@ -24,7 +24,10 @@
         "composer/installers": "^1.2",
         "drupal/core-composer-scaffold": "8.8.x-dev",
         "greg.1.anderson/core-vendor-hardening": "dev-master",
-        "drupal/core": "8.8.x-dev"
+        "greg-1-anderson/core-recommended-dependencies": "8.8.x-dev"
+    },
+    "require-dev": {
+        "greg-1-anderson/core-dev-dependencies": "8.8.x-dev"
     },
     "conflict": {
         "drupal/drupal": "*"

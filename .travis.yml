@@ -26,7 +26,9 @@ before_script:
 
   # Repair the tarball:
   #  - Remove info from drupal.org packaging from info.yml files
+  #  - Remove the "composer" directory
   - find /tmp/drupal-untarred -name "*.info.yml" -exec sed -e 's/^# version:/version:/' -e 's/^# core:/core:/' -e '/# Information added by Drupal.org packaging script/,$d' -i {} \;
+  - rm -rf /tmp/drupal-untarred/composer
 
   # Repair the SUT:
   #  - Remove the README.md and the scaffold files
