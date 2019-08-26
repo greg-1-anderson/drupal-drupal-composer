@@ -37,16 +37,16 @@ mv drupal-$DRUPAL_CORE_VERSION drupal-untarred
 
 # Repair the tarball:
 #  - Remove info from drupal.org packaging from info.yml files
-#  - Remove the "composer" directory
+#  - Remove the "composer" directory that contains things like Composer plugins
+#    and template projects that are either not included, or installed into the
+#    vendor directory on Composer-managed sites.
 #  - Remove the 'test' directory in mikey179/vfsstream which Vendor Hardening removes, but the tarball does not
 find $WORK_DIR/drupal-untarred -name "*.info.yml" -exec sed -e 's/^# version:/version:/' -e 's/^# core:/core:/' -e '/# Information added by Drupal.org packaging script/,$d' -i {} \;
 rm -rf $WORK_DIR/drupal-untarred/composer
 rm -rf $WORK_DIR/drupal-untarred/vendor/mikey179/vfsstream/src/test
 
 # Extra files that exist in the SUT that are not present in the tarball.
-# Not sure why some of these are present, but these are not significant, so
-# it does not matter. We'll just remove them here to get a clean diff.
-# (Relates to .gitattributes export stripping.)
+# These files are excluded from export in the .gitattributes file.
 rm -rf $WORK_DIR/drupal-drupal-composer/vendor/behat/mink/CONTRIBUTING.md
 rm -rf $WORK_DIR/drupal-drupal-composer/vendor/behat/mink/.gitattributes
 rm -rf $WORK_DIR/drupal-drupal-composer/vendor/behat/mink/.gitignore
@@ -93,8 +93,8 @@ diff -rBq \
 #     - drupalcs.info: In vendor/drupal/coder; contains info written by packaging script
 #
 # We also skip the core-composer-scaffold and core-vendor-hardening, which
-# exist in the vendor directory of our Composer-generated site, but do not
-# exist in the tarball (new components in Drupal 8.8.x).
+# exist in the vendor directory of our Composer-generated site, but are in
+# the 'composer' directory (at the project root) in the tarball.
 diff -rBq \
   -x .git \
   -x .htaccess \
