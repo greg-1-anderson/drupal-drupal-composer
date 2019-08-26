@@ -49,11 +49,6 @@ rm -rf $WORK_DIR/drupal-drupal-composer/vendor/behat/mink/phpdoc.ini.dist
 rm -rf $WORK_DIR/drupal-drupal-composer/vendor/behat/mink/phpunit.xml.dist
 rm -rf $WORK_DIR/drupal-drupal-composer/vendor/behat/mink/.travis.yml
 
-# We have drupal/core-composer-scaffold and drupal/core-vendor-hardening,
-# but the tarball does not
-rm -rf $WORK_DIR/drupal-drupal-composer/vendor/drupal/core-composer-scaffold
-rm -rf $WORK_DIR/drupal-drupal-composer/vendor/drupal/core-vendor-hardening
-
 set -ex
 
 # Check for differences between the tarball and the SUT (except vendor)
@@ -76,4 +71,6 @@ diff -rBq \
   -x web.config \
   -x composer \
   -x drupalcs.info \
+  -x core-composer-scaffold \
+  -x core-vendor-hardening \
   $WORK_DIR/drupal-untarred/vendor $WORK_DIR/drupal-drupal-composer/vendor
