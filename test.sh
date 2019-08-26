@@ -35,8 +35,10 @@ rm -rf $WORK_DIR/drupal-untarred/composer
 rm -rf $WORK_DIR/drupal-untarred/vendor/mikey179/vfsstream/src/test
 
 # Repair the SUT:
-#  - Remove the README.md
+#  - Remove the README.md, the test script and the travis config
 rm $WORK_DIR/drupal-drupal-composer/README.md
+rm $WORK_DIR/drupal-drupal-composer/test.sh
+rm $WORK_DIR/drupal-drupal-composer/.travis.yml
 
 # Extra files that exist in the SUT that are not present in the tarball.
 # Not sure why some of these are present, but these are not significant, so
@@ -54,10 +56,9 @@ set -ex
 # Check for differences between the tarball and the SUT (except vendor)
 diff -rBq \
   -x .git \
+  -x .gitignore \
   -x vendor \
   -x autoload.php \
-  -x .travis.yml \
-  -x .gitignore \
   -x LICENSE.txt \
   -x composer.json \
   -x composer.lock \
