@@ -35,6 +35,27 @@ before_script:
   - rm /tmp/drupal-drupal-composer/README.md
   - rm -rf /tmp/drupal-drupal-composer/core/assets/scaffold
 
+  # Extra files that exist in the SUT that are not present in the tarball.
+  # Not sure why some of these are present, but these are not significant, so
+  # it does not matter.
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/CONTRIBUTING.md
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/.git
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/.gitattributes
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/.gitignore
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/phpdoc.ini.dist
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/phpunit.xml.dist
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/.travis.yml
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink-selenium2-driver/.git
+  - rm -rf /tmp/drupal-drupal-composer/vendor/easyrdf/easyrdf/scripts
+  - rm -rf /tmp/drupal-drupal-composer/vendor/jcalderonzumba/gastonjs/docs
+  - rm -rf /tmp/drupal-drupal-composer/vendor/jcalderonzumba/gastonjs/examples
+  - rm -rf /tmp/drupal-drupal-composer/vendor/justinrainbow/json-schema/demo
+  - rm -rf /tmp/drupal-drupal-composer/vendor/masterminds/html5/bin
+  - rm -rf /tmp/drupal-drupal-composer/vendor/pear/archive_tar/docs
+  - rm -rf /tmp/drupal-drupal-composer/vendor/phar-io/manifest/examples
+  - rm -rf /tmp/drupal-drupal-composer/vendor/phpspec/prophecy/fixtures
+  - rm -rf /tmp/drupal-drupal-composer/vendor/phpspec/prophecy/spec
+
 script:
   # Check for differences between the tarball and the SUT (except vendor)
   - |
@@ -67,6 +88,4 @@ script:
     -x ext \
     -x Resources \
     -x drupal \
-    -x greg-1-anderson \
     /tmp/drupal-untarred/vendor /tmp/drupal-drupal-composer/vendor
-
