@@ -11,9 +11,18 @@ fi
 # Clean up some work directories
 rm -rf $WORK_DIR/drupal-drupal-composer
 rm -rf $WORK_DIR/drupal-untarred
+rm -rf $WORK_DIR/package-metadata
+
+
+# Set up our own packages.json metadata project
+mkdir $WORK_DIR/package-metadata
+cp composer.json composer.lock $WORK_DIR/package-metadata
+git -C $WORK_DIR/package-metadata init
+git -C $WORK_DIR/package-metadata add -A .
+git -C $WORK_DIR/package-metadata commit -m 'Initial commit'
+echo "{ \"package\": { \"name\": \"greg-1-anderson/drupal-drupal-composer\", \"version\": \"1.0.0\", \"source\": { \"url\": \"$WORK_DIR/package-metadata/.git\", \"type\": \"git\", \"reference\": \"master\" } } }" > $WORK_DIR/packages.json
 
 # Use 'composer create-project' to create our SUT
-echo "{ \"package\": { \"name\": \"greg-1-anderson/drupal-drupal-composer\", \"version\": \"1.0.0\", \"source\": { \"url\": \"$(pwd)/.git\", \"type\": \"git\", \"reference\": \"master\" } } }" > $WORK_DIR/packages.json
 composer create-project -n --repository-url=$WORK_DIR/packages.json greg-1-anderson/drupal-drupal-composer $WORK_DIR/drupal-drupal-composer
 composer -n --working-dir=$WORK_DIR/drupal-drupal-composer composer:scaffold
 
@@ -33,12 +42,6 @@ mv drupal-$DRUPAL_CORE_VERSION drupal-untarred
 find $WORK_DIR/drupal-untarred -name "*.info.yml" -exec sed -e 's/^# version:/version:/' -e 's/^# core:/core:/' -e '/# Information added by Drupal.org packaging script/,$d' -i {} \;
 rm -rf $WORK_DIR/drupal-untarred/composer
 rm -rf $WORK_DIR/drupal-untarred/vendor/mikey179/vfsstream/src/test
-
-# Repair the SUT:
-#  - Remove the README.md, the test script and the travis config
-rm $WORK_DIR/drupal-drupal-composer/README.md
-rm $WORK_DIR/drupal-drupal-composer/test.sh
-rm $WORK_DIR/drupal-drupal-composer/.travis.yml
 
 # Extra files that exist in the SUT that are not present in the tarball.
 # Not sure why some of these are present, but these are not significant, so
