@@ -27,12 +27,26 @@ before_script:
   # Repair the tarball:
   #  - Remove info from drupal.org packaging from info.yml files
   #  - Remove the "composer" directory
+  #  - Remove the 'test' directory in mikey179/vfsstream which Vendor Hardening removes, but the tarball does not
   - find /tmp/drupal-untarred -name "*.info.yml" -exec sed -e 's/^# version:/version:/' -e 's/^# core:/core:/' -e '/# Information added by Drupal.org packaging script/,$d' -i {} \;
   - rm -rf /tmp/drupal-untarred/composer
+  - rm -rf /tmp/drupal-untarred/vendor/mikey179/vfsstream/src/test
 
   # Repair the SUT:
   #  - Remove the README.md
   - rm /tmp/drupal-drupal-composer/README.md
+
+  # Extra files that exist in the SUT that are not present in the tarball.
+  # Not sure why some of these are present, but these are not significant, so
+  # it does not matter. We'll just remove them here to get a clean diff.
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/CONTRIBUTING.md
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/.git
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/.gitattributes
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/.gitignore
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/phpdoc.ini.dist
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/phpunit.xml.dist
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink/.travis.yml
+  - rm -rf /tmp/drupal-drupal-composer/vendor/behat/mink-selenium2-driver/.git
 
 script:
   # Check for differences between the tarball and the SUT (except vendor)
