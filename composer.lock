@@ -908,12 +908,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
-                "reference": "d07805cdbd85efd89d539df48711ae4d6de84a3f"
+                "reference": "eeeeb628c59a3a17f8bafa0be14d5863e115e419"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/d07805cdbd85efd89d539df48711ae4d6de84a3f",
-                "reference": "d07805cdbd85efd89d539df48711ae4d6de84a3f",
+                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/eeeeb628c59a3a17f8bafa0be14d5863e115e419",
+                "reference": "eeeeb628c59a3a17f8bafa0be14d5863e115e419",
                 "shasum": ""
             },
             "require": {
@@ -925,14 +925,14 @@
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "Drupal\\Component\\Scaffold\\Plugin",
+                "class": "Drupal\\Composer\\Plugin\\Scaffold\\Plugin",
                 "branch-alias": {
                     "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Drupal\\Component\\Scaffold\\": ""
+                    "Drupal\\Composer\\Plugin\\Scaffold\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -944,7 +944,7 @@
             "keywords": [
                 "drupal"
             ],
-            "time": "2019-07-10T21:47:33+00:00"
+            "time": "2019-08-22T02:45:53+00:00"
         },
         {
             "name": "easyrdf/easyrdf",
