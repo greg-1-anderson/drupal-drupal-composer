@@ -9,5 +9,12 @@ before_script:
   - composer clear-cache
 
 script:
-  # Run our test script
+  # Run our test script on our main repo with locked dependencies
   - ./test.sh /tmp
+  # Relax our dependencies in our composer.json, so that our next
+  # 'composer update' will get newer dev dependencies.  Re-test
+  # (with a fresh "composer install") to prove that the lock file
+  # kept the dependencies at the same version.
+  - ./relax-dev-requirements.sh
+  - ./test.sh /tmp
+
