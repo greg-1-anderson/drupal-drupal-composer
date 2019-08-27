@@ -16,7 +16,7 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/greg-1-anderson/core"
+            "url": "https://github.com/greg-1-anderson/core.git"
         }
     ],
     "require": {
