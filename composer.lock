@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7900e4902dfdbb527a4427379cf180c5",
+    "content-hash": "b6b7a6ded02824f39a81e416a771f12e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -679,13 +679,13 @@
             "version": "8.8.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/drupal/core.git",
-                "reference": "7267a4b91947ffd85b252a6cc458bd1c17a0b565"
+                "url": "https://github.com/greg-1-anderson/core.git",
+                "reference": "4b51b8f60fef6b45d5cccf2b630ddf45e292c1e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/7267a4b91947ffd85b252a6cc458bd1c17a0b565",
-                "reference": "7267a4b91947ffd85b252a6cc458bd1c17a0b565",
+                "url": "https://api.github.com/repos/greg-1-anderson/core/zipball/4b51b8f60fef6b45d5cccf2b630ddf45e292c1e2",
+                "reference": "4b51b8f60fef6b45d5cccf2b630ddf45e292c1e2",
                 "shasum": ""
             },
             "require": {
@@ -693,6 +693,7 @@
                 "composer/semver": "^1.0",
                 "doctrine/annotations": "^1.2",
                 "doctrine/common": "^2.5",
+                "drupal/core-file-security": "^8.8",
                 "easyrdf/easyrdf": "^0.9",
                 "egulias/email-validator": "^2.0",
                 "ext-date": "*",
@@ -770,7 +771,6 @@
                 "drupal/core-discovery": "self.version",
                 "drupal/core-event-dispatcher": "self.version",
                 "drupal/core-file-cache": "self.version",
-                "drupal/core-file-security": "self.version",
                 "drupal/core-filesystem": "self.version",
                 "drupal/core-gettext": "self.version",
                 "drupal/core-graph": "self.version",
@@ -895,12 +895,22 @@
                     "lib/Drupal/Core/Site/Settings.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "pre-autoload-dump": [
+                    "Drupal\\Core\\Composer\\Composer::preAutoloadDump"
+                ],
+                "post-autoload-dump": [
+                    "Drupal\\Core\\Composer\\Composer::ensureHtaccess"
+                ]
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2019-08-25T23:48:17+00:00"
+            "support": {
+                "source": "https://github.com/greg-1-anderson/core/tree/8.8.x"
+            },
+            "time": "2019-08-27T05:10:29+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -945,6 +955,40 @@
                 "drupal"
             ],
             "time": "2019-08-22T02:45:53+00:00"
+        },
+        {
+            "name": "drupal/core-file-security",
+            "version": "8.8.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal/core-file-security.git",
+                "reference": "3d3fcb69e671eb491f4853b8ff203942c95a7e11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal/core-file-security/zipball/3d3fcb69e671eb491f4853b8ff203942c95a7e11",
+                "reference": "3d3fcb69e671eb491f4853b8ff203942c95a7e11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\Component\\FileSecurity\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "FileSecurity.",
+            "homepage": "https://www.drupal.org/project/drupal",
+            "keywords": [
+                "drupal"
+            ],
+            "time": "2019-08-22T02:49:54+00:00"
         },
         {
             "name": "drupal/core-vendor-hardening",
