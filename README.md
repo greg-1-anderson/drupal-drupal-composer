@@ -16,11 +16,8 @@ This project is based on [drupal-project-legacy](https://github.com/drupal/drupa
 $ git clone git@github.com:greg-1-anderson/drupal-drupal-composer.git
 $ cd drupal-drupal-composer
 $ composer install
-$ composer composer:scaffold
 $ ./vendor/bin/drush si --db-url=mysql://root@127.0.0.1/exampledb --site-name=Example
 ```
-
-Note that `composer install` should run the scaffold operation, but currently does not due to a bug in drupal/drupal-scaffold.
 
 ## Feature comparison with drupal-composer/drupal-project
 
