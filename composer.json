@@ -13,21 +13,17 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/greg-1-anderson/core"
         }
     ],
     "require": {
         "php": ">=5.6",
         "composer/installers": "^1.2",
+        "drupal/core-recommended": "8.8.x-dev",
         "drupal/core-composer-scaffold": "8.8.x-dev",
-        "drupal/core-vendor-hardening": "8.8.x-dev",
-        "greg-1-anderson/core-recommended-dependencies": "8.8.x-dev"
+        "greg-1-anderson/core-vendor-hardening": "8.8.x-dev"
     },
     "require-dev": {
-        "greg-1-anderson/core-recommended-dev-dependencies": "8.8.x-dev"
+        "drupal/pinned-dev-dependencies": "8.8.x-dev"
     },
     "conflict": {
         "drupal/drupal": "*"
