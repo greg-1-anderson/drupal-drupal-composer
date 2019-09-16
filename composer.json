@@ -25,10 +25,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/greg-1-anderson/pinned-dev-dependencies.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/greg-1-anderson/core-vendor-hardening.git"
         }
     ],
     "require": {

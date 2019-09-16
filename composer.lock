@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbde55e9d7cfe7fed00cab1ff7173d99",
+    "content-hash": "0521a6c0ebcd0ca2dcf6829bd8b6c3cd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1049,13 +1049,13 @@
             "version": "8.8.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/greg-1-anderson/core-vendor-hardening.git",
-                "reference": "29419bdb7a06299433602880b9a6204c55f110eb"
+                "url": "https://github.com/drupal/core-vendor-hardening.git",
+                "reference": "9e134f5a3fc32f2fbb1dbea1c7d14b2159f75b18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-1-anderson/core-vendor-hardening/zipball/29419bdb7a06299433602880b9a6204c55f110eb",
-                "reference": "29419bdb7a06299433602880b9a6204c55f110eb",
+                "url": "https://api.github.com/repos/drupal/core-vendor-hardening/zipball/9e134f5a3fc32f2fbb1dbea1c7d14b2159f75b18",
+                "reference": "9e134f5a3fc32f2fbb1dbea1c7d14b2159f75b18",
                 "shasum": ""
             },
             "require": {
@@ -1071,6 +1071,7 @@
                     "Drupal\\Composer\\Plugin\\VendorHardening\\": "."
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -1079,11 +1080,7 @@
             "keywords": [
                 "drupal"
             ],
-            "support": {
-                "source": "https://github.com/greg-1-anderson/core-vendor-hardening/tree/8.8.x",
-                "issues": "https://github.com/greg-1-anderson/core-vendor-hardening/issues"
-            },
-            "time": "2019-09-16T03:31:16+00:00"
+            "time": "2019-09-15T11:04:02+00:00"
         },
         {
             "name": "drupal/legacy-scaffold-assets",
