@@ -39,7 +39,7 @@
         "drupal/core-vendor-hardening": "8.8.x-dev"
     },
     "require-dev": {
-        "drupal/pinned-dev-dependencies": "8.8.x-dev"
+        "drupal/pinned-dev-dependencies": "^8.7"
     },
     "conflict": {
         "drupal/drupal": "*"

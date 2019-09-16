@@ -17,13 +17,14 @@ rm -rf $WORK_DIR/package-metadata
 # Set up our own packages.json metadata project
 mkdir $WORK_DIR/package-metadata
 cp composer.json composer.lock $WORK_DIR/package-metadata
+sed -e 's#greg-1-anderson/drupal-drupal-composer#prototype/drupal-drupal-composer#' -i $WORK_DIR/package-metadata/composer.json
 git -C $WORK_DIR/package-metadata init
 git -C $WORK_DIR/package-metadata add -A .
 git -C $WORK_DIR/package-metadata commit -m 'Initial commit'
-echo "{ \"package\": { \"name\": \"greg-1-anderson/drupal-drupal-composer\", \"version\": \"1.0.0\", \"source\": { \"url\": \"$WORK_DIR/package-metadata/.git\", \"type\": \"git\", \"reference\": \"master\" } } }" > $WORK_DIR/packages.json
+echo "{ \"package\": { \"name\": \"prototype/drupal-drupal-composer\", \"version\": \"1.0.0\", \"source\": { \"url\": \"$WORK_DIR/package-metadata/.git\", \"type\": \"git\", \"reference\": \"master\" } } }" > $WORK_DIR/packages.json
 
 # Use 'composer create-project' to create our SUT
-composer create-project -n --repository-url=$WORK_DIR/packages.json greg-1-anderson/drupal-drupal-composer $WORK_DIR/drupal-drupal-composer
+composer create-project -n --repository-url=$WORK_DIR/packages.json prototype/drupal-drupal-composer $WORK_DIR/drupal-drupal-composer
 composer -n --working-dir=$WORK_DIR/drupal-drupal-composer composer:scaffold
 
 # Look up the version of drupal/core in our SUT, and use it to download a tarball
