@@ -36,10 +36,10 @@
         "composer/installers": "^1.2",
         "drupal/core-composer-scaffold": "8.8.x-dev",
         "drupal/core-recommended": "^8.7",
-        "drupal/core-vendor-hardening": "8.8.x-dev",
-        "drupal/pinned-dev-dependencies": "^8.7"
+        "drupal/core-vendor-hardening": "8.8.x-dev"
     },
     "require-dev": {
+        "drupal/pinned-dev-dependencies": "^8.7"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -52,6 +52,7 @@
     "extra": {
         "composer-scaffold": {
             "allowed-packages": [
+                "drupal/legacy-scaffold-assets",
                 "drupal/core"
             ],
             "locations": {
