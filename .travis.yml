@@ -10,11 +10,22 @@ before_script:
 
 script:
   # Run our test script on our main repo with locked dependencies
-  - ./test.sh /tmp
+  - mkdir /tmp/d87
+  - ./test.sh /tmp/d87
   # Relax our dependencies in our composer.json, so that our next
   # 'composer update' will get newer dev dependencies.  Re-test
-  # (with a fresh "composer install") to prove that the lock file
-  # kept the dependencies at the same version.
-  - ./relax-dev-requirements.sh
-  - ./test.sh /tmp
+  # (with a fresh "composer install", but no "composer update")
+  # to prove that the lock file kept the dependencies at the same version.
+  - ./relax-dev-requirements.sh '^8.7'
+  - mkdir /tmp/d87-relaxed
+  - ./test.sh /tmp/d87-relaxed
+  # Next we want to bump our dependencies up to 8.8.x-dev and test again
+  - composer remove --dev --no-update drupal/dev-dependencies
+  - composer require --dev --no-update drupal/pinned-dev-dependencies:^8.8.x-dev
+  - composer require --dev --no-update drupal/core-recommended:^8.8.x-dev
+  - rm composer.lock
+  - rm -rf vendor
+  - composer update
+  - mkdir /tmp/d88
+  - ./test.sh /tmp/d88
 

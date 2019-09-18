@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0521a6c0ebcd0ca2dcf6829bd8b6c3cd",
+    "content-hash": "575961bfdc16355757c5360f5e3db4ab",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -968,13 +968,13 @@
             "version": "8.7.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/greg-1-anderson/core-recommended.git",
-                "reference": "a81cb876daabf67c1dc684134380524033b69454"
+                "url": "https://github.com/drupal/core-recommended.git",
+                "reference": "776113fb574d03ee314dbffde665f9a38d04de44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-1-anderson/core-recommended/zipball/a81cb876daabf67c1dc684134380524033b69454",
-                "reference": "a81cb876daabf67c1dc684134380524033b69454",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/776113fb574d03ee314dbffde665f9a38d04de44",
+                "reference": "776113fb574d03ee314dbffde665f9a38d04de44",
                 "shasum": ""
             },
             "require": {
@@ -1035,14 +1035,12 @@
                 "webflo/drupal-core-strict": "*"
             },
             "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
-            "support": {
-                "source": "https://github.com/greg-1-anderson/core-recommended/tree/8.7.7"
-            },
-            "time": "2019-09-15T23:04:09+00:00"
+            "time": "2019-09-17T22:53:21+00:00"
         },
         {
             "name": "drupal/core-vendor-hardening",
@@ -1087,13 +1085,13 @@
             "version": "8.7.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/greg-1-anderson/legacy-scaffold-assets.git",
-                "reference": "21ef51c65705c0b30c987d669583be1b3417c8eb"
+                "url": "https://github.com/drupal/legacy-scaffold-assets.git",
+                "reference": "e2406c26b99238f416e159143f4867b15a815848"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-1-anderson/legacy-scaffold-assets/zipball/21ef51c65705c0b30c987d669583be1b3417c8eb",
-                "reference": "21ef51c65705c0b30c987d669583be1b3417c8eb",
+                "url": "https://api.github.com/repos/drupal/legacy-scaffold-assets/zipball/e2406c26b99238f416e159143f4867b15a815848",
+                "reference": "e2406c26b99238f416e159143f4867b15a815848",
                 "shasum": ""
             },
             "require": {
@@ -1129,14 +1127,12 @@
                     }
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
-            "description": "Scaffold assets from drupal/drupal",
-            "support": {
-                "source": "https://github.com/greg-1-anderson/legacy-scaffold-assets/tree/8.7.7"
-            },
-            "time": "2019-09-15T23:12:28+00:00"
+            "description": "Scaffold assets from drupal/drupal; for use with versions 8.0.x - 8.7.x.",
+            "time": "2019-09-17T23:36:41+00:00"
         },
         {
             "name": "easyrdf/easyrdf",
@@ -3887,13 +3883,13 @@
             "version": "8.7.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/greg-1-anderson/pinned-dev-dependencies.git",
-                "reference": "db9adf679052eb744fc02866f635ebdfca060da7"
+                "url": "https://github.com/drupal/pinned-dev-dependencies.git",
+                "reference": "e00febba196c6d2a2b1bf03e24192e32d1e41d41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greg-1-anderson/pinned-dev-dependencies/zipball/db9adf679052eb744fc02866f635ebdfca060da7",
-                "reference": "db9adf679052eb744fc02866f635ebdfca060da7",
+                "url": "https://api.github.com/repos/drupal/pinned-dev-dependencies/zipball/e00febba196c6d2a2b1bf03e24192e32d1e41d41",
+                "reference": "e00febba196c6d2a2b1bf03e24192e32d1e41d41",
                 "shasum": ""
             },
             "require": {
@@ -3938,14 +3934,12 @@
                 "webflo/drupal-core-require-dev": "*"
             },
             "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Pinned require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
-            "support": {
-                "source": "https://github.com/greg-1-anderson/pinned-dev-dependencies/tree/8.7.7"
-            },
-            "time": "2019-09-15T23:09:01+00:00"
+            "time": "2019-09-17T23:35:12+00:00"
         },
         {
             "name": "fabpot/goutte",
