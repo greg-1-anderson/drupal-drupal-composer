@@ -13,18 +13,6 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/greg-1-anderson/core-recommended.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/greg-1-anderson/legacy-scaffold-assets.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/greg-1-anderson/pinned-dev-dependencies.git"
         }
     ],
     "require": {
