@@ -21,8 +21,8 @@ script:
   - ./test.sh /tmp/d87-relaxed
   # Next we want to bump our dependencies up to 8.8.x-dev and test again
   - composer remove --dev --no-update drupal/dev-dependencies
-  - composer require --dev --no-update drupal/pinned-dev-dependencies:^8.8.x-dev
-  - composer require --dev --no-update drupal/core-recommended:^8.8.x-dev
+  - composer require --dev --no-update drupal/pinned-dev-dependencies:8.8.x-dev
+  - composer require --dev --no-update drupal/core-recommended:8.8.x-dev
   - rm composer.lock
   - rm -rf vendor
   - composer update
