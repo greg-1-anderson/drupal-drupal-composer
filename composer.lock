@@ -3884,12 +3884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/pinned-dev-dependencies.git",
-                "reference": "e00febba196c6d2a2b1bf03e24192e32d1e41d41"
+                "reference": "76995d015dd258f76ca5b8e69622a6cf30d8e16a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/pinned-dev-dependencies/zipball/e00febba196c6d2a2b1bf03e24192e32d1e41d41",
-                "reference": "e00febba196c6d2a2b1bf03e24192e32d1e41d41",
+                "url": "https://api.github.com/repos/drupal/pinned-dev-dependencies/zipball/76995d015dd258f76ca5b8e69622a6cf30d8e16a",
+                "reference": "76995d015dd258f76ca5b8e69622a6cf30d8e16a",
                 "shasum": ""
             },
             "require": {
@@ -3930,7 +3930,6 @@
                 "symfony/phpunit-bridge": "v3.4.26"
             },
             "conflict": {
-                "drupal/dev-dependencies": "*",
                 "webflo/drupal-core-require-dev": "*"
             },
             "type": "metapackage",
@@ -3939,7 +3938,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Pinned require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
-            "time": "2019-09-17T23:35:12+00:00"
+            "time": "2019-09-20T15:35:13+00:00"
         },
         {
             "name": "fabpot/goutte",
