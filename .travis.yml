@@ -22,10 +22,10 @@ script:
   # Next we want to bump our dependencies up to 8.8.x-dev and test again
   - composer remove --dev --no-update drupal/dev-dependencies
   - composer require --dev --no-update drupal/pinned-dev-dependencies:8.8.x-dev
-  - composer require --dev --no-update drupal/core-recommended:8.8.x-dev
-  - rm composer.lock
+  - composer require --no-update drupal/core-recommended:8.8.x-dev
+  # drupal/coder has modified files. :P
   - rm -rf vendor
-  - composer update
+  - composer -n update
   - mkdir /tmp/d88
   - ./test.sh /tmp/d88
 
